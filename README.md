@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/antcarlosrbj/projeto18-valex">
-    <img src="https://cdn.iconscout.com/icon/free/png-256/readme-3627238-3029646.png" alt="readme-logo" width="80" height="80">
+    <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f355.svg" alt="valex-logo" width="100" height="100">
   </a>
 
   <h3 align="center">
@@ -23,8 +23,13 @@ $ npm run dev
 API:
 
 ```
-- GET /cards/create
-    - Route to test the database
-    - headers: {}
-    - body: {}
+- POST /cards/create
+    - Route to create cards for your employees
+    - headers: {
+      "x-api-key": "skdjfnskdjfns"
+    }
+    - body: {
+      "employeeId": 5,
+      "cardType": "groceries"
+    }
 ```

@@ -3,6 +3,6 @@ import { cardsCreatePOST } from "./../controllers/cardsController.js";
 
 const cardsRouter = Router();
 
-cardsRouter.get("/cards/create", cardsCreatePOST);
+cardsRouter.post("/cards/create", cardsCreatePOST);
 
 export default cardsRouter;
