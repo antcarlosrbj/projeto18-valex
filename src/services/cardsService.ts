@@ -149,7 +149,11 @@ export async function getTransactionsInTheDatabase(cardId) {
   };
 }
 
-export async function blockCard(cardId, password) {
+export async function blockOrUnblockCard(operation, cardId, password) {
+
+  if (operation !== "block" && operation !== "unblock") {
+    return {res: false, text: "Not Acceptable"};
+  }
 
   /* ---------------------------------- JOI ---------------------------------- */
   const validation = schema.blockCard.validate({cardId: cardId, password: password});
@@ -170,9 +174,13 @@ export async function blockCard(cardId, password) {
     return {res: false, text: "Card is not active"};
   }
 
-  /* --------------------------- IS CARD BLOCKED? ---------------------------- */
-  if (card.isBlocked) {
+  /* --------------------- IS CARD BLOCKED OR UNBLOCKED? --------------------- */
+  if (card.isBlocked && operation === "block") {
     return {res: false, text: "Card is blocked"};
+  }
+
+  if (!card.isBlocked && operation === "unblock") {
+    return {res: false, text: "Card is unblocked"};
   }
 
   /* --------------------------- IS CARD EXPIRED? ---------------------------- */
@@ -188,10 +196,10 @@ export async function blockCard(cardId, password) {
     return {res: false, text: "Invalid password"};
   }
 
-  /* ------------------------------ BLOCK CARD ------------------------------- */
+  /* ------------------------- BLOCK OR UNBLOCK CARD ------------------------- */
   const id = card.id;
   
-  card.isBlocked = true;
+  operation === "block" ? card.isBlocked = true : card.isBlocked = false;
   delete card.id
   
   await cardRepository.update(id, card);

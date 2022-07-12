@@ -22,6 +22,8 @@ $ npm run dev
 
 API:
 
+[![thunderclient](https://img.shields.io/badge/thunder_client-000?style=for-the-badge)](https://github.com/antcarlosrbj/projeto18-valex/blob/main/tests-by-thunder-client.json)
+
 ```
 - POST /cards/create
     - Route to create cards for your employees
@@ -56,6 +58,15 @@ API:
 
 - POST /cards/block
     - Route to block card
+    - headers: {}
+    - body: {
+      "cardId": "7",
+      "password": "5265"
+    }
+
+
+- POST /cards/unblock
+    - Route to unblock card
     - headers: {}
     - body: {
       "cardId": "7",
