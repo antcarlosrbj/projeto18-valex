@@ -177,8 +177,8 @@ export async function getTransactionsInTheDatabase(cardId) {
 
   return {
     balance: balance,
-    transactions: paymentStatement,
-    recharges: rechargeStatement
+    transactions: paymentStatementAnswer,
+    recharges: rechargeStatementAnswer
   };
 }
 
