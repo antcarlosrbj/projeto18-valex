@@ -18,11 +18,15 @@ export async function validateCreation(apiKey, employeeId, cardType) {
     return {res: false, text: "API Key invalid"};
   }
   
-  if (!Number.isInteger(employeeId)) {
+  if (!/^[0-9]+$/.test(employeeId)) {
     return {res: false, text: "employee id format is wrong"};
   }
   
   const employee = await employeeRepository.findById(employeeId);
+
+  if (!employee) {
+    return {res: false, text: "Employee not found"};
+  }
   
   if (employee.companyId !== company.id) {
     return {res: false, text: "Employee does not belong to this company"};

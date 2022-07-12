@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "projeto18-valex",
-    "dateExported": "2022-07-12T09:42:06.752Z",
+    "dateExported": "2022-07-12T18:39:22.880Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -33,7 +33,7 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2022-07-12T00:10:15.721Z",
-            "modified": "2022-07-12T06:52:16.152Z",
+            "modified": "2022-07-12T18:38:46.942Z",
             "headers": [
                 {
                     "name": "x-api-key",
@@ -41,6 +41,11 @@
                 }
             ],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"employeeId\": \"2\",\n    \"cardType\": \"restaurant\"\n}",
+                "form": []
+            },
             "tests": []
         },
         {
