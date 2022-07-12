@@ -43,4 +43,11 @@ API:
       "securityCode": "180",
       "password": "8564"
     }
+
+- POST /cards/extract
+    - Route to view card balance and transactions
+    - headers: {}
+    - body: {
+      "cardId": "7"
+    }
 ```

@@ -7,6 +7,8 @@ import bcrypt from 'bcrypt';
 import * as cardRepository from "../repositories/cardRepository.js";
 import * as companyRepository from "../repositories/companyRepository.js";
 import * as employeeRepository from "../repositories/employeeRepository.js";
+import * as paymentRepository from "../repositories/paymentRepository.js";
+import * as rechargeRepository from "../repositories/rechargeRepository.js";
 import * as schema from "../utils/joiUtils.js";
 
 export async function validateCreation(apiKey, employeeId, cardType) {
@@ -122,4 +124,27 @@ export async function savePassword(cardNumber, cardholderName, expirationDate, p
   await cardRepository.update(id, card);
 
   return true;
+}
+
+export async function getTransactionsInTheDatabase(cardId) {
+
+  const paymentStatement = await paymentRepository.findByCardId(cardId);
+  const rechargeStatement = await rechargeRepository.findByCardId(cardId);
+
+  let balance = 0;
+
+  paymentStatement.forEach(e => {
+    balance -= e.amount;
+    e.timestamp = dayjs(e.timestamp).format('DD/MM/YYYY');
+  })
+  rechargeStatement.forEach(e => {
+    balance += e.amount;
+    e.timestamp = dayjs(e.timestamp).format('DD/MM/YYYY');
+  })
+
+  return {
+    balance: balance,
+    transactions: paymentStatement,
+    recharges: rechargeStatement
+  };
 }

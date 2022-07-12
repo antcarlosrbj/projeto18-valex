@@ -31,3 +31,12 @@ export async function cardsActivatePOST(req: Request, res: Response) {
 
   res.sendStatus(200);
 }
+
+export async function cardsExtractPOST(req: Request, res: Response) {
+
+  const { cardId } = req.body;
+
+  const extract = await cardsService.getTransactionsInTheDatabase(cardId);
+  
+  res.send(extract);
+}
