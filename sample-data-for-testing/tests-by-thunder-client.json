@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "projeto18-valex",
-    "dateExported": "2022-07-12T18:39:22.880Z",
+    "dateExported": "2022-07-12T19:14:15.219Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,7 +14,7 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2022-07-12T00:09:06.397Z",
-            "modified": "2022-07-12T01:14:19.285Z",
+            "modified": "2022-07-12T18:45:58.940Z",
             "headers": [],
             "params": [],
             "body": {
@@ -76,7 +76,7 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2022-07-12T03:33:06.044Z",
-            "modified": "2022-07-12T04:53:12.030Z",
+            "modified": "2022-07-12T18:49:42.823Z",
             "headers": [],
             "params": [],
             "body": {
@@ -95,7 +95,7 @@
             "method": "POST",
             "sortNum": 50000,
             "created": "2022-07-12T04:49:26.404Z",
-            "modified": "2022-07-12T04:55:35.867Z",
+            "modified": "2022-07-12T18:52:17.629Z",
             "headers": [],
             "params": [],
             "body": {
@@ -114,7 +114,7 @@
             "method": "POST",
             "sortNum": 60000,
             "created": "2022-07-12T06:46:14.277Z",
-            "modified": "2022-07-12T07:23:56.644Z",
+            "modified": "2022-07-12T19:05:28.626Z",
             "headers": [
                 {
                     "name": "x-api-key",
@@ -124,7 +124,7 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"cardId\": \"7\",\n    \"amount\": \"10000\"\n}",
+                "raw": "{\n    \"cardId\": \"7\",\n    \"amount\": \"5500\"\n}",
                 "form": []
             },
             "tests": []
@@ -138,12 +138,12 @@
             "method": "POST",
             "sortNum": 70000,
             "created": "2022-07-12T09:33:04.629Z",
-            "modified": "2022-07-12T09:33:04.629Z",
+            "modified": "2022-07-12T19:11:12.096Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"cardId\": \"7\",\n    \"businessId\": \"3\",\n    \"amount\": \"10000\"\n}",
+                "raw": "{\n    \"cardId\": \"7\",\n    \"password\": \"5265\",\n    \"businessId\": \"3\",\n    \"amount\": \"5500\"\n}",
                 "form": []
             },
             "tests": []

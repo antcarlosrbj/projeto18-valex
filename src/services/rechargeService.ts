@@ -48,6 +48,10 @@ export async function validateRecharge(apiKey, cardId, amount) {
     const employee = await employeeRepository.findById(card.employeeId)
     const company = await companyRepository.findByApiKey(apiKey)
 
+    if (!company) {
+        return {res: false, text: "Company not found"};
+    }
+
     if (employee.companyId !== company.id) {
         return {res: false, text: "Employee does not work for this company"};
     }
