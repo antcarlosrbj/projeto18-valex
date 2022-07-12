@@ -1,1 +1,105 @@
-{"client":"Thunder Client","collectionName":"projeto18-valex","dateExported":"2022-07-12T04:57:29.480Z","version":"1.1","folders":[],"requests":[{"_id":"8f38641f-a2d3-4ece-b1c4-9ee37bf289e7","colId":"2542874c-bb5b-41fe-ba13-fd9cb97e01e7","containerId":"","name":"/cards/activate","url":"http://localhost:5000/cards/activate","method":"POST","sortNum":10000,"created":"2022-07-12T00:09:06.397Z","modified":"2022-07-12T01:14:19.285Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \"cardNumber\": \"1778995761715575\",\n    \"cardholderName\": \"CICLANA M MADEIRA\",\n    \"expirationDate\": \"07/27\",\n    \"securityCode\": \"176\",\n    \"password\": \"5265\"\n}","form":[]},"tests":[]},{"_id":"35be61d4-02cd-4526-8df4-da4289d08990","colId":"2542874c-bb5b-41fe-ba13-fd9cb97e01e7","containerId":"","name":"/cards/create","url":"http://localhost:5000/cards/create","method":"POST","sortNum":20000,"created":"2022-07-12T00:10:15.721Z","modified":"2022-07-12T00:10:15.721Z","headers":[{"name":"x-api-key","value":"zadKLNx.DzvOVjQH01TumGl2urPjPQSxUbf67vs0","isDisabled":true}],"params":[],"tests":[]},{"_id":"5dc9a3aa-5646-4475-b819-c478cdeaed3c","colId":"2542874c-bb5b-41fe-ba13-fd9cb97e01e7","containerId":"","name":"/cards/extract","url":"http://localhost:5000/cards/extract","method":"POST","sortNum":30000,"created":"2022-07-12T02:00:14.672Z","modified":"2022-07-12T02:02:25.227Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \"cardId\": \"7\"\n}","form":[]},"tests":[]},{"_id":"30a631d4-7da5-473d-af9f-0bd636ebe743","colId":"2542874c-bb5b-41fe-ba13-fd9cb97e01e7","containerId":"","name":"/cards/block","url":"http://localhost:5000/cards/block","method":"POST","sortNum":40000,"created":"2022-07-12T03:33:06.044Z","modified":"2022-07-12T04:53:12.030Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \"cardId\": \"7\",\n    \"password\": \"5265\"\n}","form":[]},"tests":[]},{"_id":"c6053cd1-9419-43c1-b865-8abda1b2f77b","colId":"2542874c-bb5b-41fe-ba13-fd9cb97e01e7","containerId":"","name":"/cards/unblock","url":"http://localhost:5000/cards/unblock","method":"POST","sortNum":50000,"created":"2022-07-12T04:49:26.404Z","modified":"2022-07-12T04:55:35.867Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \"cardId\": \"7\",\n    \"password\": \"5265\"\n}","form":[]},"tests":[]}]}
+{
+    "client": "Thunder Client",
+    "collectionName": "projeto18-valex",
+    "dateExported": "2022-07-12T04:57:29.480Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8f38641f-a2d3-4ece-b1c4-9ee37bf289e7",
+            "colId": "2542874c-bb5b-41fe-ba13-fd9cb97e01e7",
+            "containerId": "",
+            "name": "/cards/activate",
+            "url": "http://localhost:5000/cards/activate",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2022-07-12T00:09:06.397Z",
+            "modified": "2022-07-12T01:14:19.285Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cardNumber\": \"1778995761715575\",\n    \"cardholderName\": \"CICLANA M MADEIRA\",\n    \"expirationDate\": \"07/27\",\n    \"securityCode\": \"176\",\n    \"password\": \"5265\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "35be61d4-02cd-4526-8df4-da4289d08990",
+            "colId": "2542874c-bb5b-41fe-ba13-fd9cb97e01e7",
+            "containerId": "",
+            "name": "/cards/create",
+            "url": "http://localhost:5000/cards/create",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2022-07-12T00:10:15.721Z",
+            "modified": "2022-07-12T00:10:15.721Z",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "value": "zadKLNx.DzvOVjQH01TumGl2urPjPQSxUbf67vs0",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5dc9a3aa-5646-4475-b819-c478cdeaed3c",
+            "colId": "2542874c-bb5b-41fe-ba13-fd9cb97e01e7",
+            "containerId": "",
+            "name": "/cards/extract",
+            "url": "http://localhost:5000/cards/extract",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2022-07-12T02:00:14.672Z",
+            "modified": "2022-07-12T02:02:25.227Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cardId\": \"7\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "30a631d4-7da5-473d-af9f-0bd636ebe743",
+            "colId": "2542874c-bb5b-41fe-ba13-fd9cb97e01e7",
+            "containerId": "",
+            "name": "/cards/block",
+            "url": "http://localhost:5000/cards/block",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2022-07-12T03:33:06.044Z",
+            "modified": "2022-07-12T04:53:12.030Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cardId\": \"7\",\n    \"password\": \"5265\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c6053cd1-9419-43c1-b865-8abda1b2f77b",
+            "colId": "2542874c-bb5b-41fe-ba13-fd9cb97e01e7",
+            "containerId": "",
+            "name": "/cards/unblock",
+            "url": "http://localhost:5000/cards/unblock",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2022-07-12T04:49:26.404Z",
+            "modified": "2022-07-12T04:55:35.867Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cardId\": \"7\",\n    \"password\": \"5265\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
