@@ -148,3 +148,53 @@ export async function getTransactionsInTheDatabase(cardId) {
     recharges: rechargeStatement
   };
 }
+
+export async function blockCard(cardId, password) {
+
+  /* ---------------------------------- JOI ---------------------------------- */
+  const validation = schema.blockCard.validate({cardId: cardId, password: password});
+  
+  if (validation.error) {
+    return {res: false, text: validation.error.details[0].message};
+  }
+
+  /* --------------------------- DOES EXISTS CARD? --------------------------- */
+  const card = await cardRepository.findById(cardId)
+  
+  if (!card) {
+    return {res: false, text: "Card not found"};
+  }
+
+  /* --------------------------- IS CARD ACTIVED? ---------------------------- */
+  if (!card.password) {
+    return {res: false, text: "Card is not active"};
+  }
+
+  /* --------------------------- IS CARD BLOCKED? ---------------------------- */
+  if (card.isBlocked) {
+    return {res: false, text: "Card is blocked"};
+  }
+
+  /* --------------------------- IS CARD EXPIRED? ---------------------------- */
+  const [month, year] = card.expirationDate.split("/").map(e => parseInt(e))
+  let expirationDateMilliseconds = dayjs(new Date(2000+year, month)).subtract(1, 'second').valueOf()
+  
+  if (expirationDateMilliseconds < dayjs().valueOf()) {
+    return {res: false, text: "Card is expired"};
+  }
+
+  /* ---------------------------- CHECK PASSWORD ----------------------------- */
+  if (!bcrypt.compareSync(password, card.password)) {
+    return {res: false, text: "Invalid password"};
+  }
+
+  /* ------------------------------ BLOCK CARD ------------------------------- */
+  const id = card.id;
+  
+  card.isBlocked = true;
+  delete card.id
+  
+  await cardRepository.update(id, card);
+
+  return {res: true};
+}

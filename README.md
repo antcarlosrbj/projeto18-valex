@@ -33,6 +33,7 @@ API:
       "cardType": "groceries"
     }
 
+
 - POST /cards/activate
     - Route to activate card
     - headers: {}
@@ -44,10 +45,20 @@ API:
       "password": "8564"
     }
 
+
 - POST /cards/extract
     - Route to view card balance and transactions
     - headers: {}
     - body: {
       "cardId": "7"
+    }
+
+
+- POST /cards/block
+    - Route to block card
+    - headers: {}
+    - body: {
+      "cardId": "7",
+      "password": "5265"
     }
 ```

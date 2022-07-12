@@ -40,3 +40,16 @@ export async function cardsExtractPOST(req: Request, res: Response) {
   
   res.send(extract);
 }
+
+export async function cardsBlockPOST(req: Request, res: Response) {
+
+  const { cardId, password } = req.body;
+
+  const result = await cardsService.blockCard(cardId, password);
+  if (!result.res) {
+    res.status(401).send(result.text);
+    return;
+  }
+  
+  res.sendStatus(200);
+}
