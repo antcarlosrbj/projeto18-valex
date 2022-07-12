@@ -12,3 +12,9 @@ export const blockCard = Joi.object({
     cardId: Joi.string().pattern(new RegExp('^[0-9]+$')).required(),
     password: Joi.string().pattern(new RegExp('^[0-9]{4}$')).required()
 });
+
+export const recharge = Joi.object({
+    apiKey: Joi.string().required(),
+    cardId: Joi.string().pattern(new RegExp('^[0-9]+$')).required(),
+    amount: Joi.string().pattern(new RegExp('^[0-9]+$')).required()
+});

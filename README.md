@@ -72,4 +72,15 @@ API:
       "cardId": "7",
       "password": "5265"
     }
+
+
+- POST /recharge/insert
+    - Route to recharge card
+    - headers: {
+      "x-api-key": "zadKLNx.DzvOVjQH01TumGl2urPjPQSxUbf67vs0"
+    }
+    - body: {
+      "cardId": "7",
+      "amount": "10000"
+    }
 ```
