@@ -16,3 +16,18 @@ export async function cardsCreatePOST(req: Request, res: Response) {
 
   res.sendStatus(200);
 }
+
+export async function cardsActivatePOST(req: Request, res: Response) {
+  
+  const { cardNumber, cardholderName, expirationDate, securityCode, password } = req.body;
+  
+  const result = await cardsService.validateActivation(cardNumber, cardholderName, expirationDate, securityCode, password);
+  if (!result.res) {
+    res.status(401).send(result.text);
+    return;
+  }
+
+  await cardsService.savePassword(cardNumber, cardholderName, expirationDate, password);
+
+  res.sendStatus(200);
+}
