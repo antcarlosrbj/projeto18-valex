@@ -22,7 +22,7 @@ $ npm run dev
 
 API:
 
-[![thunderclient](https://img.shields.io/badge/thunder_client-000?style=for-the-badge)](https://github.com/antcarlosrbj/projeto18-valex/blob/main/tests-by-thunder-client.json)
+[![thunderclient](https://img.shields.io/badge/thunder_client-000?style=for-the-badge)](https://github.com/antcarlosrbj/projeto18-valex/blob/main/sample-data-for-testing/tests-by-thunder-client.json)
 
 ```
 - POST /cards/create
