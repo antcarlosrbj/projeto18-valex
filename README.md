@@ -83,4 +83,15 @@ API:
       "cardId": "7",
       "amount": "10000"
     }
+
+
+- POST /payment/insert
+    - Route to make payments
+    - headers: {}
+    - body: {
+      "cardId": "7",
+      "businessId": "3",
+      "password": "5265",
+      "amount": "10000"
+    }
 ```

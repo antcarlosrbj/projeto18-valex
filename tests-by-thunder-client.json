@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "projeto18-valex",
-    "dateExported": "2022-07-12T07:31:17.453Z",
+    "dateExported": "2022-07-12T09:42:06.752Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -120,6 +120,25 @@
             "body": {
                 "type": "json",
                 "raw": "{\n    \"cardId\": \"7\",\n    \"amount\": \"10000\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "db8c5f6b-3d08-416d-98fe-0199f6e4b893",
+            "colId": "2542874c-bb5b-41fe-ba13-fd9cb97e01e7",
+            "containerId": "",
+            "name": "/payment/insert",
+            "url": "http://localhost:5000/payment/insert",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2022-07-12T09:33:04.629Z",
+            "modified": "2022-07-12T09:33:04.629Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cardId\": \"7\",\n    \"businessId\": \"3\",\n    \"amount\": \"10000\"\n}",
                 "form": []
             },
             "tests": []

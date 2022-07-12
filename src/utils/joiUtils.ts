@@ -18,3 +18,10 @@ export const recharge = Joi.object({
     cardId: Joi.string().pattern(new RegExp('^[0-9]+$')).required(),
     amount: Joi.string().pattern(new RegExp('^[0-9]+$')).required()
 });
+
+export const payment = Joi.object({
+    cardId: Joi.string().pattern(new RegExp('^[0-9]+$')).required(),
+    password: Joi.string().pattern(new RegExp('^[0-9]{4}$')).required(),
+    businessId: Joi.string().pattern(new RegExp('^[0-9]+$')).required(),
+    amount: Joi.string().pattern(new RegExp('^[0-9]+$')).required()
+});
