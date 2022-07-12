@@ -141,12 +141,13 @@ export async function getTransactionsInTheDatabase(cardId) {
       id: 0, 
       cardId: 0, 
       businessId: 0, 
+      businessName: "",
       timestamp: "", 
       amount: 0
     })
   }
   
-  let rechargeStatementAnswer = [{id: 0, cardId: 0, timestamp: "", amount: 0},{id: 0, cardId: 0, timestamp: "", amount: 0}];
+  let rechargeStatementAnswer = [];
   for (let i = 0; i < rechargeStatement.length; i++) {
     rechargeStatementAnswer.push({
       id: 0, 
@@ -164,6 +165,7 @@ export async function getTransactionsInTheDatabase(cardId) {
     paymentStatementAnswer[index].id = e.id;
     paymentStatementAnswer[index].cardId = e.cardId;
     paymentStatementAnswer[index].businessId = e.businessId;
+    paymentStatementAnswer[index].businessName = e.businessName;
     paymentStatementAnswer[index].timestamp = dayjs(e.timestamp).format('DD/MM/YYYY');
     paymentStatementAnswer[index].amount = e.amount
   })
