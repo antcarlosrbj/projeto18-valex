@@ -135,15 +135,44 @@ export async function getTransactionsInTheDatabase(cardId) {
   const paymentStatement = await paymentRepository.findByCardId(cardId);
   const rechargeStatement = await rechargeRepository.findByCardId(cardId);
 
+  let paymentStatementAnswer = []
+  for (let i = 0; i < paymentStatement.length; i++) {
+    paymentStatementAnswer.push({
+      id: 0, 
+      cardId: 0, 
+      businessId: 0, 
+      timestamp: "", 
+      amount: 0
+    })
+  }
+  
+  let rechargeStatementAnswer = [{id: 0, cardId: 0, timestamp: "", amount: 0},{id: 0, cardId: 0, timestamp: "", amount: 0}];
+  for (let i = 0; i < rechargeStatement.length; i++) {
+    rechargeStatementAnswer.push({
+      id: 0, 
+      cardId: 0, 
+      timestamp: "", 
+      amount: 0
+    })
+  }
+
+
   let balance = 0;
 
-  paymentStatement.forEach(e => {
+  paymentStatement.forEach((e, index) => {
     balance -= e.amount;
-    e.timestamp = dayjs(e.timestamp).format('DD/MM/YYYY');
+    paymentStatementAnswer[index].id = e.id;
+    paymentStatementAnswer[index].cardId = e.cardId;
+    paymentStatementAnswer[index].businessId = e.businessId;
+    paymentStatementAnswer[index].timestamp = dayjs(e.timestamp).format('DD/MM/YYYY');
+    paymentStatementAnswer[index].amount = e.amount
   })
-  rechargeStatement.forEach(e => {
+  rechargeStatement.forEach((e, index) => {
     balance += e.amount;
-    e.timestamp = dayjs(e.timestamp).format('DD/MM/YYYY');
+    rechargeStatementAnswer[index].id = e.id;
+    rechargeStatementAnswer[index].cardId = e.cardId;
+    rechargeStatementAnswer[index].timestamp = dayjs(e.timestamp).format('DD/MM/YYYY');
+    rechargeStatementAnswer[index].amount = e.amount
   })
 
   return {
