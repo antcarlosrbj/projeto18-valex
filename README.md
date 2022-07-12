@@ -32,4 +32,15 @@ API:
       "employeeId": 5,
       "cardType": "groceries"
     }
+
+- POST /cards/activate
+    - Route to activate card
+    - headers: {}
+    - body: {
+      "cardNumber": "1778995658715575",
+      "cardholderName": "CICLANA M MADEIRA",
+      "expirationDate": "07/27",
+      "securityCode": "180",
+      "password": "8564"
+    }
 ```
