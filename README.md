@@ -20,7 +20,25 @@ $ npm install
 $ npm run dev
 ```
 
-API:
+## Sample data for testing
+
+1. Download the zip:
+
+> [![download](https://user-images.githubusercontent.com/98707235/178484005-ceb58787-c6c3-4509-91d2-2d2bd845bd21.svg) database.zip](https://github.com/antcarlosrbj/projeto18-valex/raw/main/sample-data-for-testing/database.zip)
+
+2. Extract the contents and open a terminal in the extracted folder
+
+3. Run the following command to configure the database:
+
+```bash
+$ bash ./create-database
+```
+
+4. Use this data in **.env**:
+
+> [example.env](https://github.com/antcarlosrbj/projeto18-valex/blob/main/sample-data-for-testing/example.env)
+
+## API:
 
 [![thunderclient](https://img.shields.io/badge/thunder_client-000?style=for-the-badge)](https://github.com/antcarlosrbj/projeto18-valex/blob/main/sample-data-for-testing/tests-by-thunder-client.json)
 
